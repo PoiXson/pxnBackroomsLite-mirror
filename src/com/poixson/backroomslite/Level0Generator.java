@@ -68,6 +68,7 @@ public class Level0Generator extends ChunkGenerator {
 				valueWall = this.noiseLobbyWalls.getNoiseRot(xx, zz, 0.25);
 				isWall = (valueWall > THRESH_WALL_L && valueWall < THRESH_WALL_H);
 				chunk.setBlock(x, this.level_y, z, Material.BEDROCK);
+				chunk.setBlock(x, cy+2,         z, Material.BEDROCK);
 				if (isWall) {
 					for (int iy=1; iy<wh; iy++) {
 						chunk.setBlock(x, this.level_y+iy, z, LOBBY_WALL);
