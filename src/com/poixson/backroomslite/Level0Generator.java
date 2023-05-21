@@ -61,36 +61,36 @@ public class Level0Generator extends ChunkGenerator {
 		int xx, zz;
 		final int wh = this.level_h + 4;
 		final int cy = this.level_y + this.level_h + 2;
-		for (int z=0; z<16; z++) {
-			zz = (chunkZ * 16) + z;
-			for (int x=0; x<16; x++) {
-				xx = (chunkX * 16) + x;
+		for (int iz=0; iz<16; iz++) {
+			zz = (chunkZ * 16) + iz;
+			for (int ix=0; ix<16; ix++) {
+				xx = (chunkX * 16) + ix;
 				valueWall = this.noiseLobbyWalls.getNoiseRot(xx, zz, 0.25);
 				isWall = (valueWall > THRESH_WALL_L && valueWall < THRESH_WALL_H);
-				chunk.setBlock(x, this.level_y, z, Material.BEDROCK);
-				chunk.setBlock(x, cy+2,         z, Material.BEDROCK);
+				chunk.setBlock(ix, this.level_y, iz, Material.BEDROCK);
+				chunk.setBlock(ix, cy+2,         iz, Material.BEDROCK);
 				if (isWall) {
 					for (int iy=1; iy<wh; iy++) {
-						chunk.setBlock(x, this.level_y+iy, z, LOBBY_WALL);
+						chunk.setBlock(ix, this.level_y+iy, iz, LOBBY_WALL);
 					}
 				} else {
-					chunk.setBlock(x, this.level_y+1, z, LOBBY_CARPET);
+					chunk.setBlock(ix, this.level_y+1, iz, LOBBY_CARPET);
 					final int  modX7 = (xx < 0 ? 1-xx : xx) % 7;
 					final int  modZ7 = (zz < 0 ? 0-zz : zz) % 7;
 					if (modZ7 == 0 && modX7 < 2) {
 						// ceiling lights
-						chunk.setBlock(x, cy, z, Material.REDSTONE_LAMP);
-						final BlockData block = chunk.getBlockData(x, cy, z);
+						chunk.setBlock(ix, cy, iz, Material.REDSTONE_LAMP);
+						final BlockData block = chunk.getBlockData(ix, cy, iz);
 						((Lightable)block).setLit(true);
-						chunk.setBlock(x, cy,   z, block);
-						chunk.setBlock(x, cy+1, z, Material.REDSTONE_BLOCK);
+						chunk.setBlock(ix, cy,   iz, block);
+						chunk.setBlock(ix, cy+1, iz, Material.REDSTONE_BLOCK);
 					} else {
 						// ceiling
-						chunk.setBlock(x, cy, z, Material.SMOOTH_STONE_SLAB);
-						final Slab slab = (Slab) chunk.getBlockData(x, cy, z);
+						chunk.setBlock(ix, cy, iz, Material.SMOOTH_STONE_SLAB);
+						final Slab slab = (Slab) chunk.getBlockData(ix, cy, iz);
 						slab.setType(Slab.Type.TOP);
-						chunk.setBlock(x, cy,   z, slab);
-						chunk.setBlock(x, cy+1, z, Material.STONE);
+						chunk.setBlock(ix, cy,   iz, slab);
+						chunk.setBlock(ix, cy+1, iz, Material.STONE);
 					}
 				}
 			}
