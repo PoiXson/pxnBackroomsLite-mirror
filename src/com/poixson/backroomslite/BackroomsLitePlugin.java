@@ -14,8 +14,7 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 	public static final String CHAT_PREFIX = ChatColor.AQUA + "[Backrooms] " + ChatColor.WHITE;
 
 	protected static final String GENERATOR_NAME = "BackroomsLite";
-//TODO: change to https
-	protected static final String DEFAULT_RESOURCE_PACK = "https://dl.poixson.com/mcplugins/pxnBackrooms/pxnBackrooms-resourcepack.zip";
+	protected static final String DEFAULT_RESOURCE_PACK = "https://dl.poixson.com/mcplugins/pxnBackrooms/pxnBackrooms-resourcepack-{VERSION}.zip";
 
 	protected final Level0Generator generator;
 
@@ -35,8 +34,11 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 		{
 			final String pack = Bukkit.getResourcePack();
 			if (pack == null || pack.isEmpty()) {
-				LOG.warning(LOG_PREFIX + "Resource pack not set");
-				LOG.warning(LOG_PREFIX + "You can use this one: " + DEFAULT_RESOURCE_PACK);
+				LOG.warning(String.format(
+					"%sResource pack not set; You can use this one: %s",
+					LOG_PREFIX,
+					DEFAULT_RESOURCE_PACK.replace("{VERSION}", this.getPluginVersion())
+				));
 			} else {
 				LOG.info(String.format(
 					"%sUsing resource pack: %s",
