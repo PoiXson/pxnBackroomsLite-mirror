@@ -2,6 +2,7 @@ package com.poixson.backroomslite;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.generator.ChunkGenerator;
 
 import com.poixson.commonmc.tools.plugin.xJavaPlugin;
@@ -30,6 +31,7 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 	@Override
 	public void onEnable() {
 		super.onEnable();
+		this.generator.loadConfig(this.config.get().getConfigurationSection("Level0.Blocks"));
 		// resource pack
 		{
 			final String pack = Bukkit.getResourcePack();
@@ -60,6 +62,31 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 	public ChunkGenerator getDefaultWorldGenerator(final String worldName, final String argsStr) {
 		LOG.info(String.format("%s%s world: %s", LOG_PREFIX, GENERATOR_NAME, worldName));
 		return this.generator;
+	}
+
+
+
+	// -------------------------------------------------------------------------------
+	// configs
+
+
+
+	@Override
+	protected void loadConfigs() {
+		this.mkPluginDir();
+		final FileConfiguration cfg = this.getConfig();
+		this.config.set(cfg);
+		this.configDefaults(cfg);
+		cfg.options().copyDefaults(true);
+		super.saveConfig();
+	}
+	@Override
+	protected void saveConfigs() {
+		super.saveConfig();
+	}
+	@Override
+	protected void configDefaults(final FileConfiguration cfg) {
+		Level0Generator.ConfigDefaults(cfg); // lobby
 	}
 
 
