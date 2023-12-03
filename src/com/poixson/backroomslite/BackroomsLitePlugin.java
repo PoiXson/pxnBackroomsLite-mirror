@@ -5,7 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.generator.ChunkGenerator;
 
-import com.poixson.commonmc.tools.plugin.xJavaPlugin;
+import com.poixson.pluginlib.tools.plugin.xJavaPlugin;
 
 
 public class BackroomsLitePlugin extends xJavaPlugin {

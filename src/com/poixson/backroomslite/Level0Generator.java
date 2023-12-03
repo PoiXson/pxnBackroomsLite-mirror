@@ -1,6 +1,6 @@
 package com.poixson.backroomslite;
 
-import static com.poixson.commonmc.utils.BlockUtils.StringToBlockData;
+import static com.poixson.pluginlib.utils.BlockUtils.StringToBlockData;
 
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
