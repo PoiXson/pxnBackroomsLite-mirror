@@ -8,9 +8,9 @@ To use this world generator, just edit your multiverse worlds.yml file and set g
 After setting the generator for the world, you may need to delete the files in backrooms/region/ if any vanilla chunks have already been generated.
 
 
-Requires Multiverse and pxnCommonMC plugin:
-https://dev.bukkit.org/projects/pxncommonpluginmc
-or https://www.spigotmc.org/resources/pxncommonpluginmc.107049/
+Requires Multiverse and pxnPluginLib plugin:
+https://dev.bukkit.org/projects/pxnpluginlib
+or https://www.spigotmc.org/resources/pxnpluginlib.107049/
 
 Discord: https://discord.gg/jHgP2a3kDx
 Dev Builds: https://dl.poixson.com/mcplugins/pxnBackroomsLite/
