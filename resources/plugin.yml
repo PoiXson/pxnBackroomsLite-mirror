@@ -4,7 +4,7 @@ version: ${project.version}
 api-version: ${spigot-short-version}
 load: STARTUP
 depend:
-  - pxnCommonPluginMC
+  - pxnPluginLib
   - Multiverse-Core
 authors: [ lorenzop ]
 website: ${project.url}
