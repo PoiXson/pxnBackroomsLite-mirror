@@ -5,7 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.generator.ChunkGenerator;
 
-import com.poixson.pluginlib.tools.plugin.xJavaPlugin;
+import com.poixson.tools.xJavaPlugin;
 
 
 public class BackroomsLitePlugin extends xJavaPlugin {
@@ -36,13 +36,13 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 		{
 			final String pack = Bukkit.getResourcePack();
 			if (pack == null || pack.isEmpty()) {
-				LOG.warning(String.format(
+				this.log().warning(String.format(
 					"%sResource pack not set; You can use this one: %s",
 					LOG_PREFIX,
 					DEFAULT_RESOURCE_PACK.replace("{VERSION}", this.getPluginVersion())
 				));
 			} else {
-				LOG.info(String.format(
+				this.log().info(String.format(
 					"%sUsing resource pack: %s",
 					LOG_PREFIX,
 					Bukkit.getResourcePack()
@@ -60,7 +60,7 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 
 	@Override
 	public ChunkGenerator getDefaultWorldGenerator(final String worldName, final String argsStr) {
-		LOG.info(String.format("%s%s world: %s", LOG_PREFIX, GENERATOR_NAME, worldName));
+		this.log().info(String.format("%s%s world: %s", LOG_PREFIX, GENERATOR_NAME, worldName));
 		return this.generator;
 	}
 
