@@ -6,11 +6,11 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.block.data.Lightable;
 import org.bukkit.block.data.type.Slab;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -92,6 +92,7 @@ public class Level0Generator extends ChunkGenerator {
 		if (block_ceiling    == null) throw new RuntimeException("Invalid block type for level 0 Ceiling"   );
 		if (block_subceiling == null) throw new RuntimeException("Invalid block type for level 0 SubCeiling");
 		if (block_carpet     == null) throw new RuntimeException("Invalid block type for level 0 Carpet"    );
+		final BlockData lamp = Bukkit.createBlockData("minecraft:redstone_lamp[lit=true]");
 		double valueWall;
 		boolean isWall;
 		int xx, zz;
@@ -115,10 +116,7 @@ public class Level0Generator extends ChunkGenerator {
 					final int  modZ7 = (zz < 0 ? 0-zz : zz) % 7;
 					if (modZ7 == 0 && modX7 < 2) {
 						// ceiling lights
-						chunk.setBlock(ix, cy, iz, Material.REDSTONE_LAMP);
-						final BlockData block = chunk.getBlockData(ix, cy, iz);
-						((Lightable)block).setLit(true);
-						chunk.setBlock(ix, cy,   iz, block);
+						chunk.setBlock(ix, cy, iz, lamp);
 						chunk.setBlock(ix, cy+1, iz, Material.REDSTONE_BLOCK);
 					} else {
 						// ceiling
