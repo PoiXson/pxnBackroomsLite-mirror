@@ -96,12 +96,15 @@ public class Level0Generator extends ChunkGenerator {
 		double valueWall;
 		boolean isWall;
 		int xx, zz;
+		int modX, modZ;
 		final int wh = this.level_h + 4;
 		final int cy = this.level_y + this.level_h + 2;
 		for (int iz=0; iz<16; iz++) {
 			zz = (chunkZ * 16) + iz;
+			modZ = (zz < 0 ? 0-zz : zz) % 7;
 			for (int ix=0; ix<16; ix++) {
 				xx = (chunkX * 16) + ix;
+				modX = (xx < 0 ? 1-xx : xx) % 7;
 				valueWall = this.noiseLobbyWalls.getNoiseRot(xx, zz, 0.25);
 				isWall = (valueWall > THRESH_WALL_L && valueWall < THRESH_WALL_H);
 				chunk.setBlock(ix, this.level_y, iz, Material.BEDROCK);
@@ -112,9 +115,7 @@ public class Level0Generator extends ChunkGenerator {
 					}
 				} else {
 					chunk.setBlock(ix, this.level_y+1, iz, block_carpet);
-					final int  modX7 = (xx < 0 ? 1-xx : xx) % 7;
-					final int  modZ7 = (zz < 0 ? 0-zz : zz) % 7;
-					if (modZ7 == 0 && modX7 < 2) {
+					if (modZ == 0 && modX < 2) {
 						// ceiling lights
 						chunk.setBlock(ix, cy, iz, lamp);
 						chunk.setBlock(ix, cy+1, iz, Material.REDSTONE_BLOCK);
