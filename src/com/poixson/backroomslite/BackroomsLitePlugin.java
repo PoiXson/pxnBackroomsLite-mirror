@@ -49,6 +49,7 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 				));
 			}
 		}
+		this.saveConfigs();
 	}
 
 	@Override
@@ -78,7 +79,6 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 		this.config.set(cfg);
 		this.configDefaults(cfg);
 		cfg.options().copyDefaults(true);
-		super.saveConfig();
 	}
 	@Override
 	protected void saveConfigs() {
