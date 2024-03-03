@@ -11,7 +11,6 @@ import com.poixson.tools.xJavaPlugin;
 public class BackroomsLitePlugin extends xJavaPlugin {
 	@Override public int getSpigotPluginID() { return 108409; }
 	@Override public int getBStatsID() {       return 17876;  }
-	public static final String LOG_PREFIX  = "[pxnBackroomsLite] ";
 	public static final String CHAT_PREFIX = ChatColor.AQUA + "[Backrooms] " + ChatColor.WHITE;
 
 	protected static final String GENERATOR_NAME = "BackroomsLite";
@@ -36,17 +35,10 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 		{
 			final String pack = Bukkit.getResourcePack();
 			if (pack == null || pack.isEmpty()) {
-				this.log().warning(String.format(
-					"%sResource pack not set; You can use this one: %s",
-					LOG_PREFIX,
-					DEFAULT_RESOURCE_PACK.replace("{VERSION}", this.getPluginVersion())
-				));
+				this.log().warning("Resource pack not set; You can use this one: " +
+					DEFAULT_RESOURCE_PACK.replace("{VERSION}", this.getPluginVersion()));
 			} else {
-				this.log().info(String.format(
-					"%sUsing resource pack: %s",
-					LOG_PREFIX,
-					Bukkit.getResourcePack()
-				));
+				this.log().info("Using resource pack: " + Bukkit.getResourcePack());
 			}
 		}
 		this.saveConfigs();
@@ -61,7 +53,7 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 
 	@Override
 	public ChunkGenerator getDefaultWorldGenerator(final String worldName, final String argsStr) {
-		this.log().info(String.format("%s%s world: %s", LOG_PREFIX, GENERATOR_NAME, worldName));
+		this.log().info(String.format("%s world: %s", GENERATOR_NAME, worldName));
 		return this.generator;
 	}
 
