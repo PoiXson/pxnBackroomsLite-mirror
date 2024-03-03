@@ -11,7 +11,7 @@ import com.poixson.tools.xJavaPlugin;
 public class BackroomsLitePlugin extends xJavaPlugin {
 	@Override public int getSpigotPluginID() { return 108409; }
 	@Override public int getBStatsID() {       return 17876;  }
-	public static final String CHAT_PREFIX = ChatColor.AQUA + "[Backrooms] " + ChatColor.WHITE;
+	public static final String CHAT_PREFIX = ChatColor.AQUA+"[Backrooms] "+ChatColor.WHITE;
 
 	protected static final String GENERATOR_NAME = "BackroomsLite";
 	protected static final String DEFAULT_RESOURCE_PACK = "https://dl.poixson.com/mcplugins/pxnBackrooms/pxnBackrooms-resourcepack-{VERSION}.zip";
@@ -38,7 +38,7 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 				this.log().warning("Resource pack not set; You can use this one: " +
 					DEFAULT_RESOURCE_PACK.replace("{VERSION}", this.getPluginVersion()));
 			} else {
-				this.log().info("Using resource pack: " + Bukkit.getResourcePack());
+				this.log().info("Using resource pack: "+Bukkit.getResourcePack());
 			}
 		}
 		this.saveConfigs();
