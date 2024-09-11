@@ -31,7 +31,6 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 	@Override
 	public void onEnable() {
 		super.onEnable();
-		this.generator.loadConfig(this.config.get().getConfigurationSection("Level0.Blocks"));
 		// resource pack
 		{
 			final String pack = Bukkit.getResourcePack();
@@ -97,7 +96,6 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 	}
 	@Override
 	protected void configDefaults(final FileConfiguration cfg) {
-		Level0Generator.ConfigDefaults(cfg); // lobby
 	}
 
 
