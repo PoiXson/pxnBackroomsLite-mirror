@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated: Sat Mar  2 05:28:12 PM EST 2024 -->
+<!-- Generated: Tue Sep 10 09:25:13 PM EDT 2024 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -33,8 +33,8 @@
 		<maven-shade-plugin-version>3.5.1</maven-shade-plugin-version>
 
 		<!-- Dependencies -->
-		<spigot-short-version>1.20</spigot-short-version>
-		<spigot-api-version>1.20.2-R0.1-SNAPSHOT</spigot-api-version>
+		<bukkit-short-version>1.20</bukkit-short-version>
+		<spigot-api-version>1.20.6-R0.1-SNAPSHOT</spigot-api-version>
 		<common-core-version>[4.0.0,)</common-core-version>
 		<plugin-lib-version>[4.0.0,)</plugin-lib-version>
 		<Multiverse-Core-version>[4,)</Multiverse-Core-version>
