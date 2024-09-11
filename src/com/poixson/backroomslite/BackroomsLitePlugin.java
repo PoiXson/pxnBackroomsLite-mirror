@@ -1,5 +1,7 @@
 package com.poixson.backroomslite;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -16,13 +18,12 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 	protected static final String GENERATOR_NAME = "BackroomsLite";
 	protected static final String DEFAULT_RESOURCE_PACK = "https://dl.poixson.com/mcplugins/pxnBackrooms/pxnBackrooms-resourcepack-{VERSION}.zip";
 
-	protected final Level0Generator generator;
+	protected final AtomicReference<Level0Generator> generator = new AtomicReference<Level0Generator>(null);
 
 
 
 	public BackroomsLitePlugin() {
 		super(BackroomsLitePlugin.class);
-		this.generator = new Level0Generator();
 	}
 
 
@@ -51,10 +52,28 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 
 
 
+	public Level0Generator getGenerator() {
+		// existing generator
+		{
+			final Level0Generator gen = this.generator.get();
+			if (gen != null)
+				return gen;
+		}
+		// new instance
+		{
+			final Level0Generator gen = new Level0Generator(this);
+			if (this.generator.compareAndSet(null, gen))
+				return gen;
+		}
+		return this.generator.get();
+	}
+
+
+
 	@Override
 	public ChunkGenerator getDefaultWorldGenerator(final String worldName, final String argsStr) {
 		this.log().info(String.format("%s world: %s", GENERATOR_NAME, worldName));
-		return this.generator;
+		return this.getGenerator();
 	}
 
 
