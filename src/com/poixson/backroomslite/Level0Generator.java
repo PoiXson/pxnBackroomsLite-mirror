@@ -15,13 +15,13 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.generator.WorldInfo;
 
-import com.poixson.tools.FastNoiseLiteD;
-import com.poixson.tools.FastNoiseLiteD.CellularDistanceFunction;
-import com.poixson.tools.FastNoiseLiteD.CellularReturnType;
-import com.poixson.tools.FastNoiseLiteD.FractalType;
-import com.poixson.tools.FastNoiseLiteD.NoiseType;
 import com.poixson.tools.xRand;
 import com.poixson.tools.abstractions.AtomicDouble;
+import com.poixson.tools.noise.FastNoiseLiteD;
+import com.poixson.tools.noise.FastNoiseLiteD.CellularDistanceFunction;
+import com.poixson.tools.noise.FastNoiseLiteD.CellularReturnType;
+import com.poixson.tools.noise.FastNoiseLiteD.FractalType;
+import com.poixson.tools.noise.FastNoiseLiteD.NoiseType;
 
 
 public class Level0Generator extends ChunkGenerator {
