@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated: Sat Dec  7 04:10:21 PM EST 2024 -->
+<!-- Generated: Sat Dec  7 04:11:18 PM EST 2024 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -31,7 +31,6 @@
 		<maven-source-plugin-version>3.3.0</maven-source-plugin-version>
 		<maven-eclipse-plugin-version>2.10</maven-eclipse-plugin-version>
 		<git-commit-id-version>4.9.10</git-commit-id-version>
-		<maven-shade-plugin-version>3.5.1</maven-shade-plugin-version>
 
 		<!-- Dependencies -->
 		<bukkit-short-version>1.21.1</bukkit-short-version>
@@ -159,33 +158,6 @@
 				</executions>
 				<configuration>
 					<dotGitDirectory>.git/</dotGitDirectory>
-				</configuration>
-			</plugin>
-
-			<!-- Shade Plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>${maven-shade-plugin-version}</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<dependencyReducedPomLocation>${project.basedir}/target/dependency-reduced-pom.xml</dependencyReducedPomLocation>
-					<filters>
-						<filter>
-							<artifact>*</artifact>
-							<excludes>
-								<exclude>META-INF/*.RSA</exclude>
-								<exclude>META-INF/*.SF</exclude>
-							</excludes>
-						</filter>
-					</filters>
 				</configuration>
 			</plugin>
 
