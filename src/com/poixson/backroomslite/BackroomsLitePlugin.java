@@ -3,17 +3,19 @@ package com.poixson.backroomslite;
 import java.util.concurrent.atomic.AtomicReference;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.generator.ChunkGenerator;
 
 import com.poixson.tools.xJavaPlugin;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+
 
 public class BackroomsLitePlugin extends xJavaPlugin {
 	@Override public int getSpigotPluginID() { return 108409; }
 	@Override public int getBStatsID() {       return 17876;  }
-	public static final String CHAT_PREFIX = ChatColor.AQUA+"[Backrooms] "+ChatColor.WHITE;
+	public static final Component CHAT_PREFIX = Component.text("[Backrooms] ").color(NamedTextColor.AQUA);
 
 	protected static final String GENERATOR_NAME = "BackroomsLite";
 	protected static final String DEFAULT_RESOURCE_PACK = "https://dl.poixson.com/mcplugins/pxnBackrooms/pxnBackrooms-resourcepack-{VERSION}.zip";
