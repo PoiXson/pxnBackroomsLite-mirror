@@ -3,9 +3,14 @@ main: com.poixson.backroomslite.BackroomsLitePlugin
 version: ${project.version}
 api-version: ${spigot-short-version}
 load: STARTUP
-depends:
-  - pxnPluginLib
-  - Multiverse-Core
+dependencies:
+    server:
+        pxnPluginLib:
+            load: BEFORE
+            required: true
+        Multiverse-Core:
+            load: BEFORE
+            required: true
 authors: lorenzop
 website: ${project.url}
 description: ${project.description}
