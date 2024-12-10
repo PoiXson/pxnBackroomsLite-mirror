@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated: Sat Dec  7 04:11:18 PM EST 2024 -->
+<!-- Generated: Tue Dec 10 03:17:55 PM EST 2024 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -63,7 +63,7 @@
 				<directory>resources/</directory>
 				<filtering>true</filtering>
 				<includes>
-					<include>plugin.yml</include>
+					<include>paper-plugin.yml</include>
 					<include>app.properties</include>
 				</includes>
 			</resource>
