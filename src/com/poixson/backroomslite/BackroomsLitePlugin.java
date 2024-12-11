@@ -13,8 +13,7 @@ import net.kyori.adventure.text.format.NamedTextColor;
 
 
 public class BackroomsLitePlugin extends xJavaPlugin {
-	@Override public int getSpigotPluginID() { return 108409; }
-	@Override public int getBStatsID() {       return 17876;  }
+	@Override public int getBStatsID() { return 17876; }
 	public static final Component CHAT_PREFIX = Component.text("[Backrooms] ").color(NamedTextColor.AQUA);
 
 	protected static final String GENERATOR_NAME = "BackroomsLite";
