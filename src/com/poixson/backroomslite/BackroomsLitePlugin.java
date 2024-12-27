@@ -24,7 +24,7 @@ public class BackroomsLitePlugin extends xJavaPlugin {
 
 
 	public BackroomsLitePlugin() {
-		super(BackroomsLitePlugin.class);
+		super();
 	}
 
 
