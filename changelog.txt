@@ -1,6 +1,12 @@
 pxnBackroomsLite - Backrooms world generator for minecraft (level 0)
 
 
+2024-14-07 - 0.1.14
+===================
+* Spigot 1.21.1 - Java 21
+* last commit with spigot dependencies - switching to paper api
+
+
 2023-03-06 - 0.1.1
 ==================
 * initial release
