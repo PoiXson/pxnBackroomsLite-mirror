@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated: Fri Jan 24 07:48:56 PM EST 2025 -->
+<!-- Generated: Fri Jan 24 07:50:19 PM EST 2025 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -16,6 +16,7 @@
 		<url>https://poixson.com</url>
 	</organization>
 	<properties>
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.license>AGPLv3</project.license>
@@ -23,6 +24,8 @@
 		<maven.compiler.release>21</maven.compiler.release>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
+
+		<snap>-SNAPSHOT</snap>
 
 		<!-- Maven Plugins -->
 		<maven-resources-plugin-version>3.3.1</maven-resources-plugin-version>
@@ -40,6 +43,7 @@
 		<common-core-version>[4.2.0${snap},4.3.0${snap})</common-core-version>
 		<vitalcore-version>[4.2.0${snap},4.3.0${snap})</vitalcore-version>
 		<Multiverse-Core-version>[4.3.0,4.4.0)</Multiverse-Core-version>
+
 	</properties>
 	<scm>
 		<url>https://git.poixson.com/summary/mc!pxnBackroomsLite.git</url>
