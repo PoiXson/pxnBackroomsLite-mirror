@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated: Sun Dec 29 08:56:24 AM EST 2024 -->
+<!-- Generated: Fri Jan 24 07:45:49 PM EST 2025 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -35,11 +35,11 @@
 		<git-commit-id-version>4.9.10</git-commit-id-version>
 
 		<!-- Dependencies -->
-		<bukkit-short-version>1.21.3</bukkit-short-version>
-		<paper-api-version>1.21.3-R0.1-SNAPSHOT</paper-api-version>
-		<common-core-version>[4.0.0,)</common-core-version>
-		<pxn-plugin-lib-version>[4.0.0,)</pxn-plugin-lib-version>
-		<Multiverse-Core-version>[4,)</Multiverse-Core-version>
+		<bukkit-short-version>1.21.4</bukkit-short-version>
+		<paper-api-version>1.21.4-R0.1-SNAPSHOT</paper-api-version>
+		<common-core-version>[4.2.0${snap},4.3.0${snap})</common-core-version>
+		<vitalcore-version>[4.2.0${snap},4.3.0${snap})</vitalcore-version>
+		<Multiverse-Core-version>[4.3.0,4.4.0)</Multiverse-Core-version>
 	</properties>
 	<scm>
 		<url>https://git.poixson.com/summary/mc!pxnBackroomsLite.git</url>
