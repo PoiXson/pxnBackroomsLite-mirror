@@ -12,7 +12,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 
 
-public class BackroomsLitePlugin extends xJavaPlugin {
+public class BackroomsLitePlugin extends xJavaPlugin<BackroomsLitePlugin> {
 	@Override public int getBStatsID() { return 17876; }
 	public static final Component CHAT_PREFIX = Component.text("[Backrooms] ").color(NamedTextColor.AQUA);
 
